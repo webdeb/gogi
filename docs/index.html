@@ -38,7 +38,7 @@
     <main>
         <section class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Your Terminal,<br><span class="gradient-text">AI Supercharged.</span></h1>
+                <h1 class="hero-title">Your Terminal,<br><span class="gradient-text">Supercharged.</span></h1>
                 <p class="hero-subtitle">
                     Gogi is a lightweight, AI-powered terminal assistant built with Node.js. It translates natural
                     language into executable shell commands right in your environment.
@@ -193,17 +193,17 @@ gogi provider gemini</code></pre>
             const copyBtn = document.getElementById('copy-install-btn');
             if (copyBtn) {
                 copyBtn.addEventListener('click', () => {
-                    navigator.clipboard.writeText('npm i -g @webdeb/gogi');
-                    const icon = copyBtn.querySelector('i');
-                    icon.setAttribute('data-lucide', 'check');
-                    icon.style.color = 'var(--accent-secondary)';
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText('npm i -g @webdeb/gogi').catch(e => console.error(e));
+                    }
+
+                    copyBtn.innerHTML = '<i data-lucide="check" style="color: var(--accent-secondary)"></i>';
                     lucide.createIcons();
 
                     setTimeout(() => {
-                        icon.setAttribute('data-lucide', 'copy');
-                        icon.style.color = '';
+                        copyBtn.innerHTML = '<i data-lucide="copy"></i>';
                         lucide.createIcons();
-                    }, 2000);
+                    }, 3000);
                 });
             }
         });

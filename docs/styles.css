@@ -471,6 +471,11 @@ main {
         padding-top: 2rem;
     }
 
+    .hero-visual {
+        width: 100%;
+        justify-content: center;
+    }
+
     .hero-subtitle {
         margin: 0 auto 2.5rem;
     }
