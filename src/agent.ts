@@ -65,7 +65,7 @@ ${systemDetails}
   while (true) {
     let response: AssistantMessage;
     try {
-      response = await complete(model, context, { apiKey: config.openaiApiKey });
+      response = await complete(model, context, { apiKey });
     } catch (err: any) {
       console.error(`❌ API Error: ${err.message}`);
       process.exit(1);

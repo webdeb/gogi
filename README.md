@@ -65,6 +65,11 @@ Simply type `gogi` followed by your request:
 gogi find all the .ts files in the current directory
 ```
 
+> **Tip:** If your prompt contains special shell characters like `?` or `*`, be sure to wrap your prompt in quotes so your shell doesn't try to evaluate it as a file glob:
+> ```bash
+> gogi "what time is it?"
+> ```
+
 ```bash
 🤔 Gogi is thinking...
 ✔ Gogi wants to run:

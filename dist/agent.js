@@ -64,7 +64,7 @@ ${systemDetails}
     while (true) {
         let response;
         try {
-            response = await (0, pi_ai_1.complete)(model, context, { apiKey: config.openaiApiKey });
+            response = await (0, pi_ai_1.complete)(model, context, { apiKey });
         }
         catch (err) {
             console.error(`❌ API Error: ${err.message}`);

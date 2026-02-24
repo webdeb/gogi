@@ -34,7 +34,7 @@ program
   });
 
 program
-  .argument('[prompt...]', 'The task you want gogi to perform')
+  .argument('[prompt...]', 'The task you want gogi to perform. Tip: use quotes if your prompt contains ?, *, or other special shell characters.')
   .action(async (promptArr: string[]) => {
     const prompt = promptArr.join(' ').trim();
     if (!prompt) {
