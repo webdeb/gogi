@@ -45,6 +45,9 @@
                 </p>
                 <div class="hero-install">
                     <code>npm i -g @webdeb/gogi</code>
+                    <button id="copy-install-btn" class="copy-btn" aria-label="Copy to clipboard">
+                        <i data-lucide="copy"></i>
+                    </button>
                 </div>
                 <div class="hero-actions">
                     <a href="#installation" class="btn btn-primary">Get Started</a>
@@ -185,6 +188,24 @@ gogi provider gemini</code></pre>
             }
 
             runTerminalAnimation();
+
+            // setup copy button
+            const copyBtn = document.getElementById('copy-install-btn');
+            if (copyBtn) {
+                copyBtn.addEventListener('click', () => {
+                    navigator.clipboard.writeText('npm i -g @webdeb/gogi');
+                    const icon = copyBtn.querySelector('i');
+                    icon.setAttribute('data-lucide', 'check');
+                    icon.style.color = 'var(--accent-secondary)';
+                    lucide.createIcons();
+
+                    setTimeout(() => {
+                        icon.setAttribute('data-lucide', 'copy');
+                        icon.style.color = '';
+                        lucide.createIcons();
+                    }, 2000);
+                });
+            }
         });
     </script>
 </body>
