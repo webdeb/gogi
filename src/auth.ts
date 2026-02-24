@@ -13,11 +13,20 @@ export async function loginFlow(provider: string = 'codex') {
       onAuth: (info) => {
         console.log(`\n🌐 Opening browser for sign-in... If it doesn't open automatically, visit:\n${info.url}`);
         if (info.instructions) console.log(info.instructions);
+        console.log(`\nIf you are on a headless machine or the browser doesn't redirect back:`);
+        console.log(`1. Open the URL above in any browser`);
+        console.log(`2. Complete the sign-in process`);
+        console.log(`3. Copy the URL you are redirected to (it will start with http://localhost...)`);
+        console.log(`4. Paste it here:`);
         open(info.url);
       },
       onPrompt: async (prompt) => {
         const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
         return new Promise((resolve) => rl.question(`${prompt.message} `, (answer) => { rl.close(); resolve(answer); }));
+      },
+      onManualCodeInput: async () => {
+        const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+        return new Promise((resolve) => rl.question(`> `, (answer) => { rl.close(); resolve(answer); }));
       }
     });
   } else if (provider === 'gemini') {
@@ -25,7 +34,17 @@ export async function loginFlow(provider: string = 'codex') {
       (info) => {
         console.log(`\n🌐 Opening browser for sign-in... If it doesn't open automatically, visit:\n${info.url}`);
         if (info.instructions) console.log(info.instructions);
+        console.log(`\nIf you are on a headless machine or the browser doesn't redirect back:`);
+        console.log(`1. Open the URL above in any browser`);
+        console.log(`2. Complete the sign-in process`);
+        console.log(`3. Copy the URL you are redirected to (it will start with http://localhost...)`);
+        console.log(`4. Paste it here:`);
         open(info.url);
+      },
+      undefined,
+      async () => {
+        const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+        return new Promise((resolve) => rl.question(`> `, (answer) => { rl.close(); resolve(answer); }));
       }
     );
   } else if (provider === 'github') {
