@@ -1,6 +1,6 @@
 {
   "name": "@webdeb/gogi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gogi CLI: An AI-powered terminal assistant with native device-code OAuth.",
   "main": "dist/index.js",
   "bin": {
