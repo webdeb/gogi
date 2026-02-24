@@ -183,10 +183,12 @@ main {
 }
 
 .hero-install {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
     background: #0D0D0D;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1rem 0.6rem 1.5rem;
     border-radius: 8px;
     margin-bottom: 2.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -196,6 +198,29 @@ main {
     font-family: var(--font-mono);
     color: var(--accent-secondary);
     font-size: 1.1rem;
+}
+
+.copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.copy-btn i {
+    width: 18px;
+    height: 18px;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #FFF;
 }
 
 .hero-actions {
