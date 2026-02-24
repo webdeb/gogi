@@ -6,28 +6,27 @@ Unlike other CLI assistants that require you to manage your own paid API keys, G
 
 ## ✨ Features
 
-- **Natural Language to Shell**: Tell Gogi what you want to do (e.g., `gogi how much space is left on my machine`) and it will propose the correct terminal command.
-- **Safe Execution Loop**: Gogi intercepts the AI's proposed commands and explicitly asks for your permission (`Allow? (y/N)`) before running anything. It will capture the `stdout` and `stderr` and feed it back to the LLM so it can learn from mistakes or chain commands together.
-- **Multi-Provider OAuth**: Sign in securely using your existing AI accounts. Supported providers include:
+**Natural Language to Shell**: Tell Gogi what you want to do 
+`gogi how much space is left on my machine`
+
+**Safe Execution Loop**: Gogi intercepts the AI's proposed commands and explicitly asks for your permission (`Allow? (y/N)`) before running anything. It will capture the `stdout` and `stderr` and feed it back to the LLM so it can learn from mistakes or chain commands together.
+
+**Multi-Provider OAuth**: Sign in securely using your existing AI accounts. Supported providers include:
   - `codex` (ChatGPT Plus/Pro subscription)
   - `gemini` (Google Cloud)
   - `github` (GitHub Copilot)
-- **Auto-Generated System Context**: On first run, Gogi automatically profiles your machine (OS, architecture, shell) and generates a `~/.gogi/system.md` file. It injects this into the LLM's system prompt so the AI always knows what operating system and shell it's working with.
+
+**Auto-Generated System Context**: On first run, Gogi automatically profiles your machine (OS, architecture, shell) and generates a `~/.gogi/system.md` file. It injects this into the LLM's system prompt so the AI always knows what operating system and shell it's working with.
 
 ---
 
 ## 🚀 Installation
 
-1. Clone or download the repository.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Build the TypeScript source and link it globally:
-   ```bash
-   npm run build
-   npm link
-   ```
+Install the package globally via npm:
+
+```bash
+npm install -g @webdeb/gogi
+```
 
 You can now use the `gogi` command from anywhere in your terminal!
 

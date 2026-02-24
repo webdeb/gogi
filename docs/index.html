@@ -60,9 +60,10 @@
                         <span class="dot green"></span>
                         <div class="terminal-title">bash — gogi</div>
                     </div>
-                    <div class="terminal-body" id="typing-terminal">
+                    <div class="terminal-body" style="text-align: left; width: 100%;" id="typing-terminal">
                         <div class="line" id="line1" style="display: none;"><span class="prompt">$</span> <span
-                                class="cmd">gogi find all the .ts files in the current dir</span></div>
+                                class="cmd"><span class="green">gogi</span> find all the .ts files in the current
+                                dir</span></div>
                         <div class="line dim" id="line2" style="display: none;">🤔 Gogi is thinking...</div>
                         <div class="line" id="line3" style="display: none;"><span class="success">✔</span> Gogi wants to
                             run:</div>
@@ -101,32 +102,23 @@
                     <p>Sign in securely using native Device-Code OAuth flows. Plug Gogi directly into your existing
                         OpenAI, Google Gemini, or GitHub Copilot accounts for free!</p>
                 </div>
-                <div class="feature-card glass">
+                <!-- <div class="feature-card glass">
                     <div class="feature-icon"><i data-lucide="cpu"></i></div>
                     <h3>Auto System Context</h3>
                     <p>On the first run, Gogi automatically profiles your machine (OS, arch, shell) and injects it into
                         the prompt to ensure the AI always uses the correct syntax.</p>
-                </div>
+                </div> -->
             </div>
         </section>
 
         <section id="installation" class="section glass code-section">
             <div class="code-content">
                 <h2 class="section-title left">Installation</h2>
-                <p>Clone the repository, install dependencies, and link the binary globally to use `gogi` from anywhere.
-                </p>
+                <p>Install the package globally using npm to use the `gogi` command from anywhere.</p>
                 <div class="code-block">
                     <div class="code-header">Terminal</div>
-                    <pre><code><span class="dim"># 1. Clone the repository</span>
-git clone https://github.com/webdeb/gogi.git
-cd gogi
-
-<span class="dim"># 2. Install dependencies</span>
-npm install
-
-<span class="dim"># 3. Build and link</span>
-npm run build
-npm link</code></pre>
+                    <pre><code><span class="dim"># Install globally via npm</span>
+npm install -g @webdeb/gogi</code></pre>
                 </div>
             </div>
         </section>
